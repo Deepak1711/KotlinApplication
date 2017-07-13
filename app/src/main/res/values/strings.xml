@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">KotlinTrial</string>
+    <string-array name="head_list">
+        <item name="head1">Code</item>
+        <item name="head2">Output</item>
+        <item name="head3">Description</item>
+    </string-array>
 </resources>
