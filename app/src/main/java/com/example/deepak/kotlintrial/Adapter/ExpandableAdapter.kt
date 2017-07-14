@@ -11,17 +11,7 @@ import com.example.deepak.kotlintrial.R
 /**
  * Created by webonise on 13/7/17.
  */
-class ExpandableAdapter(ctx: Context, samples: Triple<String, String, String>, dataHeader: List<String>) : BaseExpandableListAdapter() {
-
-    val ctx: Context
-    val dataChild: Triple<String, String, String>
-    val dataHeader: List<String>
-
-    init {
-        this.ctx = ctx
-        this.dataChild = samples
-        this.dataHeader = dataHeader
-    }
+class ExpandableAdapter(val ctx: Context, val dataChild: Triple<String, String, String>, val dataHeader: List<String>) : BaseExpandableListAdapter() {
 
     override fun getGroup(groupPosition: Int): Any {
         return dataHeader.get(groupPosition)

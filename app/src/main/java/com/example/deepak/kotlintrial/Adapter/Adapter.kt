@@ -7,21 +7,13 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.deepak.kotlintrial.R
+import com.example.deepak.kotlintrial.View.ExpandableActivity
 
 /**
  * Created on 12/7/17.
  */
 
-class Adapter(ctx: Context, question:MutableList<String>) : BaseAdapter() {
-    val question:MutableList<String>
-    val layoutInflator: LayoutInflater
-    val ctx: Context
-
-    init {
-        layoutInflator = LayoutInflater.from(ctx)
-        this.question=question
-        this.ctx = ctx
-    }
+class Adapter(val ctx: Context, val question: MutableList<String>) : BaseAdapter() {
 
     override fun getItem(position: Int): Any {
         return question.get(position)
@@ -40,6 +32,7 @@ class Adapter(ctx: Context, question:MutableList<String>) : BaseAdapter() {
         var textLabel: TextView
         when (convertView) {
             null -> {
+                val layoutInflator: LayoutInflater = LayoutInflater.from(ctx)
                 row = layoutInflator.inflate(R.layout.list_row, parent, false)
             }
             else -> row = convertView
